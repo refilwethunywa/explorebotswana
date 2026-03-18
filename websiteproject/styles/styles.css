@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f1e9; /* Sand beige */
+  color: #333333; /* Dark charcoal */
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(90deg, #ff6e40, #ff9a76, #ffd6ba); /* Sunset gradient */
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+nav {
+  background-color: #3b6e47; /* Safari green */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  margin: 0;
+  padding: 0.75em 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  background-color: #d97a3e; /* Warm terracotta */
+}
+
+main {
+  max-width: 1000px;
+  margin: 2em auto;
+  padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+main article,
+main section {
+  margin-bottom: 2em;
+}
+
+main article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1em;
+}
+
+/* === Full-width welcome image === */
+article.welcome img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin-top: 1em;
+}
+
+/* === Three columns layout below welcome image === */
+section.columns {
+  display: flex;
+  flex-direction: column; /* Stack vertically on mobile */
+  gap: 1.5em;
+  margin-top: 2em;
+}
+
+section.columns article {
+  background-color: #ffffffcc; /* Slightly transparent white for readability */
+  padding: 1em;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Desktop view: side-by-side columns */
+@media (min-width: 768px) {
+  section.columns {
+    flex-direction: row;
+  }
+
+  section.columns article {
+    flex: 1; /* Equal width columns */
+  }
+}
+
+/* Optional: hover effect for each column */
+section.columns article:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+/* === Contact form === */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  max-width: 400px;
+  margin: 1em auto;
+}
+
+.contact-form label {
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form input:required,
+.contact-form textarea:required {
+  border-color: #d97a3e; /* Warm terracotta for required fields */
+}
+
+.contact-form button {
+  background-color: #d97a3e;
+  color: white;
+  border: none;
+  padding: 0.6em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #ff6e40; /* Sunset orange hover */
+}
+
+footer {
+  background: linear-gradient(90deg, #ff6e40, #ff9a76, #ffd6ba); /* Sunset gradient */
+  color: white;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9rem;
+}
+
+/* === Contact form styled like content cards === */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 500px;
+  margin: 2em auto;
+  background-color: #ffffffcc; /* same as columns */
+  padding: 1.5em;
+  border-radius: 8px;
+}
+
+/* Labels */
+.contact-form label {
+  font-weight: 600;
+  text-align: left;
+}
+
+/* Inputs and textarea */
+.contact-form input,
+.contact-form textarea {
+  padding: 0.6em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+/* Focus effect (nice UX touch) */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #3b6e47; /* safari green */
+}
+
+/* Required fields highlight */
+.contact-form input:required,
+.contact-form textarea:required {
+  border-left: 4px solid #d97a3e; /* terracotta indicator */
+}
+
+/* Button */
+.contact-form button {
+  background-color: #d97a3e;
+  color: white;
+  border: none;
+  padding: 0.7em;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Button hover (sunset effect) */
+.contact-form button:hover {
+  background-color: #ff6e40;
+}
+
+ section img {
+    width: 300px;      /* or height: 200px; */
+    height: auto;      /* keeps the aspect ratio */
+    margin: 10px;      /* spacing between images */
+    border-radius: 4px; /* optional rounded corners */
+  }
