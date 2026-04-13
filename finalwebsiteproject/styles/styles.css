@@ -1,0 +1,349 @@
+:root {
+  --red: #d32f2f;
+  --orange: #ff7043;
+  --green: #3f7d4a;
+  --dark-green: #2e5d38;
+  --sand: #f5f1e9;
+  --text: #333333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--sand);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+body.home {
+  background-image: url("../images/okavangodelta.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+body.home::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* keep content above overlay */
+header,
+nav,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  background-color: var(--red);
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.logo-icon {
+  height: 1.2em;
+  vertical-align: middle;
+}
+
+nav {
+  background-color: var(--dark-green);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  margin: 0;
+  padding: 0.75em 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  background-color: var(--orange);
+}
+
+main {
+  max-width: 1000px;
+  margin: 2em auto;
+  padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.hero-image {
+  margin: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 8px;
+}
+
+#culture-card {
+  max-width: 900px;
+  margin: -60px auto 2em auto;
+  background: rgba(255,255,255,0.92);
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+ol, ul {
+  padding-left: 1.2em;
+}
+
+.video-section {
+  margin-top: 2em;
+}
+
+.video-section h3 {
+  color: var(--red);
+}
+
+iframe {
+  width: 100%;
+  height: 400px;
+  border: 0;
+  border-radius: 10px;
+}
+
+#welcome {
+  padding: 10px;
+  border-left: 5px solid var(--orange);
+  border-radius: 8px;
+  background-color: rgba(255,255,255,0.85);
+}
+
+.welcome-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.welcome-image img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 8px;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.columns article {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(255,255,255,0.9);
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+main article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 500px;
+  margin: 2em auto;
+  background: rgba(255,255,255,0.85);
+  padding: 1.5em;
+  border-radius: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.6em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--dark-green);
+  outline: none;
+}
+
+.contact-form input:required,
+.contact-form textarea:required {
+  border-left: 4px solid var(--orange);
+}
+
+.contact-form button {
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: 0.7em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: var(--red);
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.gallery h3 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--dark-green);
+}
+
+.gallery figure {
+  width: 200px;
+  margin: 0;
+  text-align: center;
+}
+
+.gallery a {
+  position: relative;
+  display: block;
+}
+
+.gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid var(--green);
+  border-radius: 6px;
+  display: block;
+}
+
+/* overlay */
+.gallery span {
+  position: absolute;
+  inset: 0;
+  background: rgba(211,47,47,0.7);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.gallery a:hover span {
+  opacity: 1;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+table th {
+  background: var(--dark-green);
+  color: white;
+  padding: 12px;
+}
+
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+table tr:nth-child(even) {
+  background: var(--sand);
+}
+
+table tr:hover {
+  background: #ffefe6;
+}
+
+table td:first-child {
+  font-weight: bold;
+  color: var(--red);
+}
+
+.travel-card,
+.map-section,
+.contact-section {
+  background: rgba(255,255,255,0.9);
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+footer {
+  background: var(--red);
+  color: white;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+
+  .welcome-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .columns {
+    flex-direction: column;
+  }
+
+  .hero-image img {
+    height: 220px;
+  }
+
+  #culture-card {
+    margin: -40px auto 2em auto;
+  }
+
+  .gallery figure {
+    width: 45%;
+  }
+}
